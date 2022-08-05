@@ -1,0 +1,30 @@
+{
+    "aiqum": {
+        "ip": "10.128.212.197",
+        "cred": "YWRtaW46UEBzc3cwcmQ=",
+        "verify": 0
+    },
+    "clusters": [
+        {
+            "name": "PS-A220",
+            "base_port": "a0a",
+            "mtu": 1500,
+            "snapmirror_destination": {
+                "peer_cluster_name": "ps-2650-cl",
+                "backup_svm_name": "opt-test",
+                "backup_aggregate_name": "aggr1_node1"
+            }
+        },
+        {
+            "name": "ps-2650-cl",
+            "base_port": "a0a",
+            "mtu": 1500,
+            "snapmirror_destination": {
+                "peer_cluster_name": "PS-A220",
+                "backup_svm_name": "s3test",
+                "backup_aggregate_name": "aggr1_node1"
+            }
+        }
+    ],
+    "export_policy_name_for_vm_datastore": "default"
+}
